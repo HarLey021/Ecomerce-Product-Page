@@ -1,8 +1,18 @@
 const Menu: React.FC<MenuProps> = ({ setShowMenu }) => {
   return (
     <>
-      <div className="fixed w-full min-h-screen bg-black/75 z-5 ">
-        <div className="w-[250px] min-h-screen bg-white p-[25px]">
+      <div
+        onClick={() => {
+          setShowMenu(false);
+        }}
+        className="fixed w-full min-h-screen bg-black/75 z-5 "
+      >
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className="w-[250px] min-h-screen bg-white p-[25px]"
+        >
           <button
             onClick={() => {
               setShowMenu(false);
