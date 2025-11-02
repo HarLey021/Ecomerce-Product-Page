@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const images = [
+const images: string[] = [
   "image-product-1.jpg",
   "image-product-2.jpg",
   "image-product-3.jpg",
@@ -8,7 +8,7 @@ const images = [
 ];
 
 const Product: React.FC = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState<number>(0);
 
   const nextImage = () => {
     setIndex((prev) => (prev + 1) % images.length);
