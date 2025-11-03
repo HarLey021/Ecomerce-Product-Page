@@ -10,7 +10,7 @@ export const images: string[] = [
 ];
 
 const Product: React.FC<ProductProps> = ({ setShowGallery }) => {
-  const { quantity, setQuantity, cartContent, setCartContent } =
+  const { quantity, setQuantity, setCartContent } =
     useContext<MainContextType>(MainContext);
   const { index, setIndex, nextImage, prevImage } = useImageNavigation();
 
