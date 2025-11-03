@@ -12,4 +12,6 @@ html,
   --color-black: #1d2026;
   --color-grey: #69707d;
   --color-orange: #ff7e1b;
+
+  --breakpoint-lg: 1440px;
 }
