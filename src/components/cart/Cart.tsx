@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MainContext } from "../../App";
 
 const Cart: React.FC = () => {
-  const { quantity, setQuantity, cartContent, setCartContent } =
+  const { quantity, cartContent, setCartContent } =
     useContext<MainContextType>(MainContext);
   console.log(cartContent);
   return (
