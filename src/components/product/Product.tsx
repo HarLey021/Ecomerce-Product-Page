@@ -135,7 +135,7 @@ const Product: React.FC<ProductProps> = ({ setShowGallery }) => {
                 onClick={() => {
                   setQuantity((prev) => {
                     if (prev === 0) return prev;
-                    const updated = prev + 1;
+                    const updated = prev - 1;
                     quantityRef.current = updated;
                     return updated;
                   });
