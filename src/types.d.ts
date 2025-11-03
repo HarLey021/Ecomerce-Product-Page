@@ -19,6 +19,7 @@ type MainContextType = {
   setQuantity: React.Dispatch<React.SetStateAction<number>>;
   cartContent: boolean;
   setCartContent: React.Dispatch<React.SetStateAction<boolean>>;
+  quantityRef: RefObject<number>;
 };
 
 type GalleryProps = {

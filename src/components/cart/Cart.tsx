@@ -2,9 +2,9 @@ import { useContext } from "react";
 import { MainContext } from "../../App";
 
 const Cart: React.FC = () => {
-  const { quantity, cartContent, setCartContent } =
+  const { cartContent, setCartContent, quantityRef } =
     useContext<MainContextType>(MainContext);
-  console.log(cartContent);
+
   return (
     <>
       <div
@@ -36,10 +36,10 @@ const Cart: React.FC = () => {
                   </h6>
                   <div className="flex">
                     <h6 className="text-[16px] text-grey mr-[10px]">
-                      $125.00 x {quantity}
+                      $125.00 x {quantityRef.current}
                     </h6>
                     <h6 className="text-[16px] text-black font-bold">
-                      ${(125 * quantity).toFixed(2)}
+                      ${(125 * quantityRef.current).toFixed(2)}
                     </h6>
                   </div>
                 </div>

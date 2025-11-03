@@ -10,7 +10,7 @@ export const images: string[] = [
 ];
 
 const Product: React.FC<ProductProps> = ({ setShowGallery }) => {
-  const { quantity, setQuantity, setCartContent } =
+  const { quantity, setQuantity, setCartContent, quantityRef } =
     useContext<MainContextType>(MainContext);
   const { index, setIndex, nextImage, prevImage } = useImageNavigation();
 
@@ -133,9 +133,12 @@ const Product: React.FC<ProductProps> = ({ setShowGallery }) => {
             <div className="w-full h-[56px] rounded-[10px] bg-[#F6F8FD] flex justify-between items-center px-[24px] mb-[16px] lg:w-[157px]">
               <button
                 onClick={() => {
-                  if (quantity !== 0) {
-                    setQuantity(quantity - 1);
-                  }
+                  setQuantity((prev) => {
+                    if (prev === 0) return prev;
+                    const updated = prev + 1;
+                    quantityRef.current = updated;
+                    return updated;
+                  });
                 }}
               >
                 <img
@@ -151,7 +154,11 @@ const Product: React.FC<ProductProps> = ({ setShowGallery }) => {
 
               <button
                 onClick={() => {
-                  setQuantity(quantity + 1);
+                  setQuantity((prev) => {
+                    const updated = prev + 1;
+                    quantityRef.current = updated;
+                    return updated;
+                  });
                 }}
               >
                 <img
