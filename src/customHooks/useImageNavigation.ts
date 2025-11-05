@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { MainContext } from "../App";
 import { images } from "../components/product/Product";
+import { MainContext } from "../contexts/MainContext";
 
 export const useImageNavigation = () => {
   const { index, setIndex } = useContext<MainContextType>(MainContext);

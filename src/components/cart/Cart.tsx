@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MainContext } from "../../App";
+import { MainContext } from "../../contexts/MainContext";
 
 const Cart: React.FC = () => {
   const { cartContent, setCartContent, quantityRef } =

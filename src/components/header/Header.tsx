@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import Cart from "../cart/Cart";
+import { MainContext } from "../../contexts/MainContext";
 
 const Header: React.FC<HeaderProps> = ({
   showCart,
   setShowCart,
   setShowMenu,
 }) => {
+  const { quantityRef, cartContent } = useContext<MainContextType>(MainContext);
   return (
     <>
       <div className="w-full h-[68px] px-[24px] py-[20px] flex justify-between items-center relative lg:p-0 lg:h-[50px] lg:mb-[34px] ">
@@ -27,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({
           </ul>
         </div>
 
-        <div className="w-[68px] flex justify-between items-center lg:w-[120px]">
+        <div className="w-[68px] flex justify-between items-center lg:w-[120px] relative">
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -36,6 +39,12 @@ const Header: React.FC<HeaderProps> = ({
           >
             <img src="/icon-cart.svg" alt="cart" className="cursor-pointer" />
           </button>
+          {cartContent && (
+            <div className="w-[19px] h-[13px] rounded-[7px] bg-orange absolute top-[-3px] left-[9px] text-[white] text-[10px] font-bold text-center lg:top-[10px]">
+              {quantityRef.current}
+            </div>
+          )}
+
           <img
             src="/image-avatar.png"
             alt="avatar"

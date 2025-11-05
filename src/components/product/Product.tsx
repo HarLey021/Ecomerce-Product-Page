@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useImageNavigation } from "../../customHooks/useImageNavigation";
-import { MainContext } from "../../App";
+import { MainContext } from "../../contexts/MainContext";
 
 export const images: string[] = [
   "/image-product-1.jpg",
@@ -136,7 +136,6 @@ const Product: React.FC<ProductProps> = ({ setShowGallery }) => {
                   setQuantity((prev) => {
                     if (prev === 0) return prev;
                     const updated = prev - 1;
-                    quantityRef.current = updated;
                     return updated;
                   });
                 }}
@@ -156,7 +155,6 @@ const Product: React.FC<ProductProps> = ({ setShowGallery }) => {
                 onClick={() => {
                   setQuantity((prev) => {
                     const updated = prev + 1;
-                    quantityRef.current = updated;
                     return updated;
                   });
                 }}
@@ -173,6 +171,7 @@ const Product: React.FC<ProductProps> = ({ setShowGallery }) => {
                 if (quantity > 0) {
                   setCartContent(true);
                   setQuantity(0);
+                  quantityRef.current = quantity;
                 }
               }}
               className="w-full h-[56px] bg-orange rounded-[10px] shadow-[0_20px_50px_-20px_#FF7E1B] flex justify-center items-center lg:w-[272px] lg:shadow-none cursor-pointer"

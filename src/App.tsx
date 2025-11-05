@@ -1,16 +1,7 @@
 import MainPage from "./components/mainPage/MainPage";
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { useRef } from "react";
-
-export const MainContext = createContext<MainContextType>({
-  index: 0,
-  setIndex: () => {},
-  quantity: 0,
-  setQuantity: () => {},
-  cartContent: false,
-  setCartContent: () => {},
-  quantityRef: 0,
-});
+import { MainContext } from "./contexts/MainContext";
 
 function App() {
   const [index, setIndex] = useState<number>(0);
