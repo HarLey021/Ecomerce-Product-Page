@@ -21,12 +21,12 @@ const Header: React.FC<HeaderProps> = ({
             <img src="/icon-menu.svg" alt="menu" />
           </button>
           <img src="/logo.svg" alt="sneakers logo" />
-          <ul className="hidden text-[15px] text-grey lg:flex gap-[20px] ml-[56px]">
-            <li className="cursor-pointer">Collections</li>
-            <li className="cursor-pointer">Men</li>
-            <li className="cursor-pointer">Women</li>
-            <li className="cursor-pointer">About</li>
-            <li className="cursor-pointer">Contact</li>
+          <ul className="hidden text-[15px] text-grey  lg:flex gap-[20px] ml-[56px]">
+            <li className="cursor-pointer hover:text-black">Collections</li>
+            <li className="cursor-pointer hover:text-black">Men</li>
+            <li className="cursor-pointer hover:text-black">Women</li>
+            <li className="cursor-pointer hover:text-black">About</li>
+            <li className="cursor-pointer hover:text-black">Contact</li>
           </ul>
         </div>
 

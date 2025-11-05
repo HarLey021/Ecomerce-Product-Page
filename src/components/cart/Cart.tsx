@@ -51,11 +51,11 @@ const Cart: React.FC = () => {
                   <img
                     src="/icon-delete.svg"
                     alt="delete product"
-                    className="w-[14px] h-[16px]"
+                    className="w-[14px] h-[16px] cursor-pointer"
                   />
                 </button>
               </div>
-              <button className="w-full h-[56px] bg-orange rounded-[10px] text-[16px] text-white font-bold">
+              <button className="w-full h-[56px] bg-orange rounded-[10px] text-[16px] text-white font-bold cursor-pointer">
                 Checkout
               </button>
             </div>
